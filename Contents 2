@@ -1,0 +1,251 @@
+//: A SwiftUI-based playground made by DetailsPro for presenting great user interface designs.
+
+import SwiftUI
+import UIKit
+import PlaygroundSupport
+
+struct ContentView: View {
+    var body: some View {
+		ZStack {
+			ZStack {
+				LinearGradient(gradient: Gradient(colors: [Color(.displayP3, red: 181/255, green: 189/255, blue: 172/255), Color(.displayP3, red: 107/255, green: 91/255, blue: 76/255), Color(.displayP3, red: 181/255, green: 189/255, blue: 172/255)]), startPoint: .bottomLeading, endPoint: .topTrailing)
+					.frame()
+					.clipped()
+			}
+			Text("You make it fashion".uppercased())
+				.font(.system(.title, design: .serif, weight: .bold))
+				.frame(minWidth: .infinity, minHeight: .infinity, alignment: .leading)
+				.clipped()
+				.padding(.bottom, 600)
+				.padding(.horizontal)
+				.fixedSize(horizontal: false, vertical: true)
+				.multilineTextAlignment(.center)
+				.shadow(color: Color(.secondarySystemBackground).opacity(0.5), radius: 3, x: 0, y: 4)
+				.foregroundStyle(Color(.displayP3, red: 226/255, green: 216/255, blue: 205/255))
+			ScrollView(showsIndicators: false) {
+				// Navigation Bar
+				VStack(spacing: 1) {
+					// Status Bar
+					HStack {
+						Text("9:41")
+							.frame(width: 109)
+							.clipped()
+							.font(.system(.body, weight: .semibold))
+						Spacer()
+						HStack(spacing: 5) {
+							Image(systemName: "cellularbars")
+								.imageScale(.small)
+							Image(systemName: "wifi")
+								.imageScale(.small)
+							Image(systemName: "battery.100")
+								.symbolRenderingMode(.hierarchical)
+								.font(.system(.body, weight: .light))
+						}
+						.frame(width: 109)
+						.clipped()
+						.font(.system(.body, weight: .semibold))
+					}
+					.padding(.horizontal)
+					.padding(.bottom)
+					.frame(maxWidth: .infinity)
+					.clipped()
+					.frame(height: 53)
+					.clipped()
+				}
+				.frame(height: 98)
+				.clipped()
+				.background {
+					Group {
+						
+					}
+				}
+			}
+			.overlay(alignment: .top) {
+				Group {
+					
+				}
+			}
+			.overlay(alignment: .bottom) {
+				Group {
+					ScrollView(.horizontal, showsIndicators: false) {
+						HStack(alignment: .firstTextBaseline) {
+							ZStack {
+								Rectangle()
+									.fill(Color(.displayP3, red: 234/255, green: 232/255, blue: 222/255))
+									.frame(minWidth: 6, minHeight: 52)
+									.clipped()
+									.mask { RoundedRectangle(cornerRadius: 28, style: .continuous) }
+									.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+									.aspectRatio(1/1, contentMode: .fit)
+									.clipped()
+								Image(uiImage: UIImage(named: "Image 1.png") ?? .init())
+									.renderingMode(.original)
+									.resizable()
+									.aspectRatio(contentMode: .fit)
+									.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+									.mask { RoundedRectangle(cornerRadius: 28, style: .continuous) }
+									.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+									.aspectRatio(1/1, contentMode: .fit)
+									.clipped()
+									.overlay {
+										Text("Own your uniqueness with confidence ")
+											.kerning(1.6)
+											.padding(.leading, 60)
+											.frame(width: 170, alignment: .leading)
+											.clipped()
+											.font(.system(.body, design: .serif, weight: .semibold))
+											.foregroundStyle(Color(.displayP3, red: 107/255, green: 91/255, blue: 76/255))
+											.shadow(color: .black.opacity(0.5), radius: 8, x: 0, y: 4)
+											.multilineTextAlignment(.center)
+									}
+									.opacity(1)
+									.offset(x: -10, y: 0)
+							}
+							.frame(width: 250, height: 300)
+							.clipped()
+							ZStack {
+								Image(uiImage: UIImage(named: "Image 12.png") ?? .init())
+									.renderingMode(.original)
+									.resizable()
+									.aspectRatio(contentMode: .fill)
+									.offset(x: 0, y: 0)
+									.frame(minWidth: .infinity, minHeight: .infinity, alignment: .trailing)
+									.clipped()
+									.mask { RoundedRectangle(cornerRadius: 28, style: .continuous) }
+									.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+									.aspectRatio(1/1, contentMode: .fit)
+									.clipped()
+							}
+							.frame(width: .infinity, height: .infinity, alignment: .center)
+							.clipped()
+							.offset(x: 0, y: 0)
+							.overlay {
+								Text("Explore new style")
+									.kerning(1.6)
+									.padding(.horizontal, 40)
+									.frame(width: 170, alignment: .leading)
+									.clipped()
+									.font(.system(.body, design: .serif, weight: .semibold))
+									.foregroundStyle(Color(.displayP3, red: 107/255, green: 91/255, blue: 76/255))
+									.shadow(color: .black.opacity(0.5), radius: 8, x: 0, y: 4)
+									.multilineTextAlignment(.center)
+									.padding(.bottom, 33)
+							}
+							ZStack {
+								Image(uiImage: UIImage(named: "Image 3.png") ?? .init())
+									.renderingMode(.original)
+									.resizable()
+									.aspectRatio(contentMode: .fill)
+									.offset(x: 0, y: 40)
+									.frame(minWidth: .infinity, minHeight: .infinity, alignment: .trailing)
+									.clipped()
+									.mask { RoundedRectangle(cornerRadius: 28, style: .continuous) }
+									.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+									.aspectRatio(1/1, contentMode: .fit)
+									.clipped()
+									.overlay {
+										Text("Discover fashion with their story")
+											.kerning(1.6)
+											.padding(.horizontal, 20)
+											.frame(width: 170, alignment: .leading)
+											.clipped()
+											.font(.system(.body, design: .serif, weight: .semibold))
+											.foregroundStyle(Color(.displayP3, red: 107/255, green: 91/255, blue: 76/255))
+											.shadow(color: .black.opacity(0.5), radius: 8, x: 0, y: 4)
+											.multilineTextAlignment(.center)
+											.padding(.bottom, 40)
+									}
+							}
+							.frame(width: .infinity, height: .infinity, alignment: .center)
+							.clipped()
+							.offset(x: 0, y: 0)
+							ZStack {
+								Image(uiImage: UIImage(named: "Image 9.png") ?? .init())
+									.renderingMode(.original)
+									.resizable()
+									.aspectRatio(contentMode: .fill)
+									.offset(x: 0, y: 0)
+									.frame(minWidth: .infinity, minHeight: .infinity, alignment: .trailing)
+									.clipped()
+									.mask { RoundedRectangle(cornerRadius: 28, style: .continuous) }
+									.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+									.aspectRatio(1/1, contentMode: .fit)
+									.clipped()
+									.overlay {
+										Text("Style that adapts you across seasons skin and culture ")
+											.kerning(0.6)
+											.padding(.horizontal, 30)
+											.frame(width: 170, alignment: .leading)
+											.clipped()
+											.font(.system(.body, design: .serif, weight: .semibold))
+											.foregroundStyle(Color(.displayP3, red: 107/255, green: 91/255, blue: 76/255))
+											.shadow(color: .black.opacity(0.5), radius: 8, x: 0, y: 4)
+											.multilineTextAlignment(.center)
+									}
+							}
+							.frame(width: .infinity, height: .infinity, alignment: .center)
+							.clipped()
+							.offset(x: 0, y: 0)
+						}
+						.frame(height: 300)
+						.clipped()
+					}
+					.frame(maxWidth: .infinity, maxHeight: .infinity)
+					.clipped()
+					.fixedSize(horizontal: false, vertical: true)
+					.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+					.aspectRatio(1/1, contentMode: .fit)
+					.clipped()
+					.padding(.bottom, 290)
+					Text("Take the exam to define your style")
+						.kerning(2.0)
+						.padding(.top, 200)
+						.font(.system(.subheadline, design: .serif, weight: .black))
+						.multilineTextAlignment(.center)
+						.padding()
+						.foregroundStyle(Color(.displayP3, red: 57/255, green: 45/255, blue: 37/255))
+						.fixedSize(horizontal: false, vertical: true)
+						.shadow(color: .primary.opacity(0.5), radius: 8, x: 0, y: 4)
+					 // Connect this action to your .sheet() modifier and @State variable
+					Button(action: { }, label: {
+						Text("Start")
+							.padding(.horizontal, 60)
+							.foregroundStyle(Color(.displayP3, red: 226/255, green: 216/255, blue: 205/255))
+							.font(.system(.body, design: .serif, weight: .heavy))
+							.shadow(color: .primary.opacity(0.22), radius: 8, x: 0, y: 4)
+					})
+						.buttonStyle(.borderedProminent)
+						.buttonBorderShape(.capsule(style: .continuous))
+					.padding(.top, 400)
+					.foregroundStyle(Color(.systemGroupedBackground))
+					.background {
+						Group {
+							
+						}
+					}
+					.shadow(color: Color(.displayP3, red: 57/255, green: 45/255, blue: 37/255), radius: 8, x: 1, y: 4)
+				}
+			}
+			.background {
+				Group {
+					
+				}
+			}
+			.frame(height: 900)
+			.clipped()
+		}
+		.background {
+			Group {
+				
+			}
+		}
+		.frame(width: 402, height: 874)
+		.clipped()
+		.background(Color(.systemBackground))
+		.mask { RoundedRectangle(cornerRadius: 62, style: .continuous) }
+    }
+}
+
+
+
+PlaygroundPage.current.setLiveView(ContentView())

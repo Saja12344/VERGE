@@ -1,0 +1,161 @@
+//: A SwiftUI-based playground made by DetailsPro for presenting great user interface designs.
+
+import SwiftUI
+import UIKit
+import PlaygroundSupport
+
+struct ContentView: View {
+    var body: some View {
+		ScrollView {
+			VStack {
+				Text("Today style ".uppercased())
+					.font(.system(.largeTitle, design: .serif, weight: .black))
+					.frame(maxWidth: .infinity, alignment: .leading)
+					.clipped()
+					.padding(.leading, 30)
+					.padding(.bottom, 8)
+					.foregroundStyle(Color(.displayP3, red: 226/255, green: 216/255, blue: 205/255))
+					.shadow(color: .black.opacity(0.69), radius: 8, x: 0, y: 8)
+				ForEach(0..<5) { _ in // Replace with your data model here
+					// Chapter VStack
+					VStack(alignment: .leading) {
+						Text("Colors")
+							.padding(.leading, 30)
+							.font(.system(.title3, design: .serif, weight: .heavy))
+							.shadow(color: .primary.opacity(0.9), radius: 5, x: 0, y: 5)
+							.foregroundStyle(Color(.displayP3, red: 57/255, green: 45/255, blue: 37/255))
+						ScrollView(.horizontal, showsIndicators: false) {
+							HStack {
+								ForEach(0..<5) { _ in // Replace with your data model here
+									VStack(alignment: .leading) {
+										Image(uiImage: UIImage(named: "Image 11.png") ?? .init())
+											.renderingMode(.original)
+											.resizable()
+											.aspectRatio(contentMode: .fill)
+											.frame(width: 250, height: 141)
+											.clipped()
+											.mask { RoundedRectangle(cornerRadius: 10, style: .continuous) }
+											.shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 3)
+									}
+									.frame(width: 250)
+									.clipped()
+								}
+							}
+							.padding(.horizontal)
+						}
+						// Poster
+						ZStack {
+							Image(uiImage: UIImage(named: "Image 13.png") ?? .init())
+								.renderingMode(.original)
+								.resizable()
+								.aspectRatio(contentMode: .fill)
+								.frame(width: 392, height: 450)
+								.clipped()
+								.mask { RoundedRectangle(cornerRadius: 18, style: .continuous) }
+								.padding()
+							VStack(spacing: 7) {
+								Text("Palestinian Embroidery: A Symbol of Heritage".uppercased())
+									.font(.system(.footnote, design: .serif, weight: .semibold))
+									.padding(.bottom)
+									.foregroundStyle(Color(.displayP3, red: 107/255, green: 91/255, blue: 76/255))
+									.shadow(color: .primary, radius: 7, x: 0, y: 7)
+								Text("A Cultural Icon of Struggle and Resilience")
+									.font(.system(.title2, design: .serif, weight: .bold))
+									.multilineTextAlignment(.center)
+									.foregroundStyle(Color(.displayP3, red: 57/255, green: 45/255, blue: 37/255))
+									.shadow(color: .primary, radius: 4, x: -1, y: -2)
+								Text("The Palestinian thobe, adorned with intricate embroidery, is more than just traditional attire. It represents a profound cultural symbol, deeply rooted in the history and identity of the Palestinian people. With unique patterns and colors, each design tells a story of resistance, heritage, and resilience. The thobe is not just worn for celebration but is a powerful emblem of Palestinian heritage and struggle, preserving the spirit of the people through generations. It remains an enduring symbol of unity and pride, transcending time and borders.")
+									.font(.system(.footnote, design: .serif, weight: .bold))
+									.opacity(1)
+									.multilineTextAlignment(.center)
+									.frame(width: 370)
+									.clipped()
+									.foregroundStyle(Color(.displayP3, red: 226/255, green: 216/255, blue: 205/255))
+									.shadow(color: .black.opacity(0.75), radius: 2, x: 2, y: 3)
+							}
+							.foregroundStyle(.white)
+						}
+						.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+						.clipped()
+					}
+					.padding(.vertical)
+				}
+			}
+			.frame(maxWidth: .infinity)
+			.clipped()
+			.padding(.top, 98)
+			.padding(.bottom, 150)
+			.background {
+				LinearGradient(gradient: Gradient(colors: [Color(.displayP3, red: 181/255, green: 189/255, blue: 172/255), Color(.displayP3, red: 107/255, green: 91/255, blue: 76/255), Color(.displayP3, red: 181/255, green: 189/255, blue: 172/255)]), startPoint: .top, endPoint: .bottom)
+			}
+		}
+		.overlay(alignment: .top) {
+			// Status Bar
+			HStack {
+				Text("9:41")
+					.frame(width: 109)
+					.clipped()
+					.font(.system(.body, weight: .semibold))
+				Spacer()
+				HStack(spacing: 5) {
+					Image(systemName: "cellularbars")
+						.imageScale(.small)
+					Image(systemName: "wifi")
+						.imageScale(.small)
+					Image(systemName: "battery.100")
+						.symbolRenderingMode(.hierarchical)
+						.font(.system(.body, weight: .light))
+				}
+				.frame(width: 109)
+				.clipped()
+				.font(.system(.body, weight: .semibold))
+			}
+			.padding(.horizontal)
+			.padding(.top, 5)
+			.frame(maxWidth: .infinity)
+			.clipped()
+			.frame(height: 53)
+			.clipped()
+		}
+		.overlay(alignment: .bottom) {
+			// Tab Bar
+			VStack(spacing: 0) {
+				Divider()
+				HStack(spacing: 10) {
+					ForEach(0..<5) { _ in // Replace with your data model here
+						VStack(spacing: 4) {
+							Image(systemName: "play.circle.fill")
+								.imageScale(.large)
+								.frame(height: 26)
+								.clipped()
+							Text("Listen Now")
+								.font(.caption2)
+						}
+						.frame(maxWidth: .infinity)
+						.clipped()
+						.frame(height: 45)
+						.clipped()
+						.foregroundStyle(.secondary)
+					}
+				}
+				.padding(.horizontal, 15)
+				.padding(.top, 5)
+			}
+			.frame(height: 84, alignment: .top)
+			.clipped()
+			.background {
+				Rectangle()
+					.fill(.clear)
+					.background(Material.bar)
+			}
+		}
+		.frame(width: 402, height: 874)
+		.clipped()
+		.background(Color(.systemBackground))
+		.mask { RoundedRectangle(cornerRadius: 62, style: .continuous) }
+    }
+}
+
+
+
+PlaygroundPage.current.setLiveView(ContentView())

@@ -1,0 +1,56 @@
+//: A SwiftUI-based playground made by DetailsPro for presenting great user interface designs.
+
+import SwiftUI
+import UIKit
+import PlaygroundSupport
+
+struct ContentView: View {
+    var body: some View {
+		VStack {
+			Spacer()
+		}
+		.frame(maxWidth: .infinity)
+		.clipped()
+		.padding(.top, 53)
+		.padding(.bottom, 0)
+		.overlay(alignment: .top) {
+			// Status Bar
+			HStack {
+				Text("9:41")
+					.frame(width: 109)
+					.clipped()
+					.font(.system(.body, weight: .semibold))
+				Spacer()
+				HStack(spacing: 5) {
+					Image(systemName: "cellularbars")
+						.imageScale(.small)
+					Image(systemName: "wifi")
+						.imageScale(.small)
+					Image(systemName: "battery.100")
+						.symbolRenderingMode(.hierarchical)
+						.font(.system(.body, weight: .light))
+				}
+				.frame(width: 109)
+				.clipped()
+				.font(.system(.body, weight: .semibold))
+			}
+			.padding(.horizontal)
+			.padding(.top, 5)
+			.frame(maxWidth: .infinity)
+			.clipped()
+			.frame(height: 53)
+			.clipped()
+		}
+		.background {
+			LinearGradient(gradient: Gradient(colors: [Color(.displayP3, red: 181/255, green: 189/255, blue: 172/255), Color(.displayP3, red: 181/255, green: 189/255, blue: 172/255), Color(.displayP3, red: 107/255, green: 91/255, blue: 76/255)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+		}
+		.frame(width: 402, height: 874)
+		.clipped()
+		.background(Color(.systemBackground))
+		.mask { RoundedRectangle(cornerRadius: 62, style: .continuous) }
+    }
+}
+
+
+
+PlaygroundPage.current.setLiveView(ContentView())

@@ -1,0 +1,75 @@
+//: A SwiftUI-based playground made by DetailsPro for presenting great user interface designs.
+
+import SwiftUI
+import UIKit
+import PlaygroundSupport
+
+struct ContentView: View {
+    var body: some View {
+		ScrollView(showsIndicators: false) {
+			VStack {
+				
+			}
+			.frame(maxWidth: .infinity)
+			.clipped()
+			.padding(.top, 98)
+			.padding(.bottom, 150)
+		}
+		.overlay(alignment: .top) {
+			// Status Bar
+			HStack {
+				Text("9:41")
+					.frame(width: 109)
+					.clipped()
+					.font(.system(.body, weight: .semibold))
+				Spacer()
+				HStack(spacing: 5) {
+					Image(systemName: "cellularbars")
+						.imageScale(.small)
+					Image(systemName: "wifi")
+						.imageScale(.small)
+					Image(systemName: "battery.100")
+						.symbolRenderingMode(.hierarchical)
+						.font(.system(.body, weight: .light))
+				}
+				.frame(width: 109)
+				.clipped()
+				.font(.system(.body, weight: .semibold))
+			}
+			.padding(.horizontal)
+			.padding(.top, 5)
+			.frame(maxWidth: .infinity)
+			.clipped()
+			.frame(height: 53)
+			.clipped()
+			.background(Color(.systemBackground).opacity(0))
+		}
+		.background {
+			Image(uiImage: UIImage(named: "Image 8.png") ?? .init())
+				.renderingMode(.original)
+				.resizable()
+				.aspectRatio(contentMode: .fill)
+				.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+				.clipped()
+				.overlay {
+					Group {
+						
+					}
+				}
+				.background(Color(.displayP3, red: 244/255, green: 244/255, blue: 240/255))
+		}
+		.overlay {
+			Group {
+				
+			}
+		}
+		.frame(width: 402, height: 874)
+		.clipped()
+		.background(Color(.systemBackground))
+		.mask { RoundedRectangle(cornerRadius: 62, style: .continuous) }
+    }
+}
+
+
+
+PlaygroundPage.current.setLiveView(ContentView())
